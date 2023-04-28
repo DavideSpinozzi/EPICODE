@@ -177,6 +177,11 @@ header div > img {
   padding: 1rem;
   background-color: #181919;
   border-radius: 50px;
+  border: none;
+  transition: all 200ms;
+}
+.nav-button:hover{
+  background-color: #28a745;
 }
 .main-container {
   display: flex;
@@ -207,6 +212,10 @@ header div > img {
   border-radius: 50px;
   display: flex;
   font-size: 1.5rem;
+  transition: all 200ms;
+}
+.main-button:hover{
+  background-color: #28a745;
 }
 .M {
  width: 40%;
