@@ -324,6 +324,11 @@ header div > img {
   background-color:#E6E7E7;
   padding: 0.3rem 0.8rem;
   border-radius: 50px;
+  transition: all 200ms
+}
+.background:hover{
+  background-color: #727272;
+  color: white;
 }
 .bookmark{
   position: absolute;
@@ -356,6 +361,10 @@ z-index: 2;
   padding: 0.9rem 1.1rem;
   transition: all 200ms;
 }
+.keywords p:hover{
+  background-color: #727272;
+  color: white;
+}
 .sticky ul{
   width: 70%;
   padding-top: 1rem;
@@ -367,7 +376,4 @@ z-index: 2;
   margin: 0.4rem 1.2rem;
   margin-left: 0;
 }
-.keywords p:hover{
-  background-color: #727272;
-  color: white;
-}
+
