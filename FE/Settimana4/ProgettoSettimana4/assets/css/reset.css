@@ -180,6 +180,9 @@ header div > img {
   border: none;
   transition: all 200ms;
 }
+#nav-button-new-color{
+  background-color: #28a745;
+}
 .nav-button:hover{
   background-color: #28a745;
 }

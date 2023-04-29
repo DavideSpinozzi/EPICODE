@@ -9452,14 +9452,15 @@ setInterval(() => {
 }, 50);
 const div = document.getElementById('div2');
 const header = document.querySelector('header');
+const button = document.querySelector('.nav-button')
 
 window.addEventListener('scroll', () => {
   if (window.scrollY >= div.offsetTop + div.offsetHeight) {
     header.classList.add('white-header');
-    document.querySelector('.nav-button').style.backgroundColor = '#28a745';
+    button.setAttribute('id', 'nav-button-new-color')
   } else {
     header.classList.remove('white-header');
-    document.querySelector('.nav-button').style.backgroundColor = '#181919';
+    button.removeAttribute('id', 'nav-button-new-color')
   }
 });
 
