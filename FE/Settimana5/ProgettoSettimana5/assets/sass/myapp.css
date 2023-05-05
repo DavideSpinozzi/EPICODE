@@ -38,7 +38,7 @@ p {
   opacity: 0.5;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1366px) {
   .freccia-destra {
     left: 50%;
   }
@@ -48,14 +48,13 @@ p {
   .media-query {
     display: flex;
     justify-content: center;
-    height: 30rem;
   }
   .media-query-1 {
-    width: 100%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 5rem;
+    margin: auto;
   }
   .media-query-1 h1 {
     font-size: 3.4rem;
@@ -64,9 +63,8 @@ p {
     font-size: 1.6rem;
   }
   .media-query-2 {
-    width: 20%;
-    margin-left: 6rem;
-    margin-right: 18rem;
+    width: 40% !important;
+    margin: auto;
   }
   .media-query-3 {
     display: flex;
@@ -80,5 +78,14 @@ p {
   .media-query-4 {
     width: 80%;
     margin: auto;
+  }
+  .footer {
+    width: 80% !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer div {
+    width: 30%;
   }
 }/*# sourceMappingURL=myapp.css.map */
