@@ -1,0 +1,84 @@
+.bg-purple {
+  background-color: #7550FE;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.bg-giallino {
+  background-color: #FFEEDA;
+}
+
+p {
+  margin: 0;
+}
+
+.text-purple {
+  color: #7550FE;
+}
+
+.text-xs {
+  font-size: 0.8rem;
+}
+
+.freccia-sinistra {
+  position: absolute;
+  top: 50%;
+  right: 48%;
+  color: grey;
+  opacity: 0.5;
+}
+
+.freccia-destra {
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  color: grey;
+  opacity: 0.5;
+}
+
+@media (min-width: 1000px) {
+  .freccia-destra {
+    left: 50%;
+  }
+  .freccia-sinistra {
+    right: 50%;
+  }
+  .media-query {
+    display: flex;
+    justify-content: center;
+    height: 30rem;
+  }
+  .media-query-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5rem;
+  }
+  .media-query-1 h1 {
+    font-size: 3.4rem;
+  }
+  .media-query-1 p {
+    font-size: 1.6rem;
+  }
+  .media-query-2 {
+    width: 20%;
+    margin-left: 6rem;
+    margin-right: 18rem;
+  }
+  .media-query-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .media-query-3 div {
+    margin-top: 0.9rem;
+  }
+  .media-query-4 {
+    width: 80%;
+    margin: auto;
+  }
+}/*# sourceMappingURL=myapp.css.map */
