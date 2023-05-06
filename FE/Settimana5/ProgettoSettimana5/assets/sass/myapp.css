@@ -40,10 +40,12 @@ p {
 
 @media (min-width: 1366px) {
   .freccia-destra {
-    left: 50%;
+    left: 52%;
+    opacity: 1;
   }
   .freccia-sinistra {
-    right: 50%;
+    right: 52%;
+    opacity: 1;
   }
   .media-query {
     display: flex;
