@@ -23,19 +23,20 @@ p {
 }
 
 .freccia-sinistra {
+  width: 50px;
   position: absolute;
   top: 50%;
-  right: 48%;
+  right: 90%;
   color: grey;
   opacity: 0.5;
   z-index: 1;
 }
 
 .freccia-destra {
-  width: 100%;
+  width: 50px;
   position: absolute;
   top: 50%;
-  left: 48%;
+  left: 90%;
   color: grey;
   opacity: 0.5;
   z-index: 1;
@@ -43,11 +44,11 @@ p {
 
 @media (min-width: 1366px) {
   .freccia-destra {
-    left: 52%;
+    left: 100%;
     opacity: 1;
   }
   .freccia-sinistra {
-    right: 52%;
+    right: 100%;
     opacity: 1;
   }
   .media-query {
