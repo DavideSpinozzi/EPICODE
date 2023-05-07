@@ -20,7 +20,7 @@ p{
     width: 50px;
     position: absolute;
     top: 50%;
-    right: 90%;
+    right: 95%;
     color: grey;
     opacity: 0.5;
     z-index: 1;
@@ -29,12 +29,12 @@ p{
     width: 50px;
     position: absolute;
     top: 50%;
-    left: 90%;
+    left: 95%;
     color: grey;
     opacity: 0.5;
     z-index: 1;
 }
-@media (min-width: 1366px){
+@media (min-width: 1230px){
     .freccia-destra {
         left: 100%;
         opacity: 1;
@@ -63,7 +63,7 @@ p{
     .media-query-2{
         width: 40% !important;
         
-      margin: auto;
+      margin: 0 auto;
        
     }
     .media-query-3{
