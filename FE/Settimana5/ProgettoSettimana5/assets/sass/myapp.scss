@@ -22,6 +22,7 @@ p{
     right: 48%;
     color: grey;
     opacity: 0.5;
+    z-index: 1;
 }
 .freccia-destra{
     width: 100%;
@@ -30,15 +31,18 @@ p{
     left: 48%;
     color: grey;
     opacity: 0.5;
+    z-index: 1;
 }
 @media (min-width: 1366px){
     .freccia-destra {
         left: 52%;
         opacity: 1;
+       
     }
     .freccia-sinistra{
         right: 52%;
         opacity: 1 ;
+        
     }
     .media-query{
         display: flex;

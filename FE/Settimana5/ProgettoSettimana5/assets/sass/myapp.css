@@ -28,6 +28,7 @@ p {
   right: 48%;
   color: grey;
   opacity: 0.5;
+  z-index: 1;
 }
 
 .freccia-destra {
@@ -37,6 +38,7 @@ p {
   left: 48%;
   color: grey;
   opacity: 0.5;
+  z-index: 1;
 }
 
 @media (min-width: 1366px) {
