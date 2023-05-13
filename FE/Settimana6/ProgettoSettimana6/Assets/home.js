@@ -1,9 +1,9 @@
-const backoffice = document.getElementById('backoffice')
+const backoffice = document.getElementById("backoffice");
 const formDiv = document.getElementById("form");
 const allProducts = document.querySelector(".ok");
-backoffice.addEventListener('click', ()=>{
-  location.href='backoffice.html'
-})
+backoffice.addEventListener("click", () => {
+  location.href = "backoffice.html";
+});
 function modificaProdotto(id, card) {
   formDiv.innerHTML = "";
   card.setAttribute("style", "width: 100%");
@@ -112,7 +112,6 @@ window.onload = function visualizzaProdotti() {
                 </div>`;
         allProducts.innerHTML += card;
       }
-      
     })
     .catch((error) => {
       console.error("Errore:", error);

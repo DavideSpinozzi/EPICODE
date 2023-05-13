@@ -3,10 +3,10 @@ const formDiv = document.getElementById("form");
 const rimuoviProdotti = document.getElementById("Reset");
 const allProducts = document.querySelector(".ok");
 const AppendiCard = document.getElementById("AppendiCard");
-const homepage= document.getElementById('homepage')
-homepage.addEventListener('click', ()=>{
-  location.href='homepage.html'
-})
+const homepage = document.getElementById("homepage");
+homepage.addEventListener("click", () => {
+  location.href = "homepage.html";
+});
 aggiungiProdotto.addEventListener("click", async (e) => {
   e.preventDefault();
   AppendiCard.innerHTML = "";
