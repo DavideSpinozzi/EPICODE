@@ -1,8 +1,14 @@
 const id= localStorage.getItem('IdProdotto');
 console.log(id);
-
 const dettagliProduct = document.getElementById('dettagliProdotto');
-
+const homepage= document.getElementById('homepage')
+homepage.addEventListener('click', ()=>{
+  location.href='homepage.html'
+})
+const backoffice = document.getElementById('backoffice')
+backoffice.addEventListener('click', ()=>{
+  location.href='backoffice.html'
+})
 window.onload = function() {
   fetch(`https://striveschool-api.herokuapp.com/api/product/${id}`, {
     headers: {

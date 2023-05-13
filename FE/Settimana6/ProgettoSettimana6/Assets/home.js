@@ -1,8 +1,9 @@
-
+const backoffice = document.getElementById('backoffice')
 const formDiv = document.getElementById("form");
-
 const allProducts = document.querySelector(".ok");
-
+backoffice.addEventListener('click', ()=>{
+  location.href='backoffice.html'
+})
 function modificaProdotto(id, card) {
   formDiv.innerHTML = "";
   card.setAttribute("style", "width: 100%");
