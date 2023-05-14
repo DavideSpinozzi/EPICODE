@@ -11,15 +11,15 @@ function modificaProdotto(id, card) {
   const form = `<h3 class='mt-4 text-warning'>Stai modificando un prodotto</h3>
   <form class='m-5'>
     <label for="name">Nome:</label>
-    <input type="text" id="name" name="name"><br><br>
+    <input type="text" id="name" name="name" required><br><br>
     <label for="description">Descrizione:</label>
-    <input type="text" id="description" name="description"><br><br>
+    <input type="text" id="description" name="description" required><br><br>
     <label for="brand">Marca:</label>
-    <input type="text" id="brand" name="brand"><br><br>
+    <input type="text" id="brand" name="brand" required><br><br>
     <label for="imageUrl">URL Immagine:</label>
-    <input type="text" id="imageUrl" name="imageUrl"><br><br>
+    <input type="text" id="imageUrl" name="imageUrl" required><br><br>
     <label for="price">Prezzo:</label>
-    <input type="number" id="price" name="price"><br><br>
+    <input type="number" id="price" name="price" min="1" required><br><br>
     <div class='d-flex justify-content-between'> 
     <button class='btn btn-outline-info btn-lg btn-radius' type="submit">Modifica</button>
     <button class='btn btn-outline-info btn-lg btn-radius' type="reset">Pulisci campi</button>
