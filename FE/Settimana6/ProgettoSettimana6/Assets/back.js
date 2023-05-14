@@ -106,6 +106,11 @@ function eliminaProdotto(id, card) {
       console.error(error);
     });
 }
+function AnnullaModifica(card) {
+  allProducts.appendChild(card);
+  formDiv.innerHTML = "";
+  //Uncaught SyntaxError: missing ] after element list. in 230 righe di javascript non ho usato manco una parentesi quadra diobestia
+}
 function modificaProdotto(id, card) {
   formDiv.innerHTML = "";
   card.setAttribute("style", "width: 150%");
@@ -125,6 +130,7 @@ function modificaProdotto(id, card) {
     <div class='d-flex justify-content-between'> 
     <button class='btn btn-outline-info btn-lg btn-radius' type="submit">Modifica</button>
     <button class='btn btn-outline-info btn-lg btn-radius' type="reset">Pulisci campi</button>
+    <button class='btn btn-outline-danger btn-lg btn-radius' type="button" onclick="AnnullaModifica(${card})">Annulla</button>
     </div>
   </form>
 `;
