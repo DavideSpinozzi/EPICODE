@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "primaApp": {
+    "giorno1": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/prima-app",
+            "outputPath": "dist/giorno1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "primaApp:build:production"
+              "browserTarget": "giorno1:build:production"
             },
             "development": {
-              "browserTarget": "primaApp:build:development"
+              "browserTarget": "giorno1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "primaApp:build"
+            "browserTarget": "giorno1:build"
           }
         },
         "test": {
@@ -105,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "9b1190ba-e210-467e-9be7-22c9bc90e96d"
+    "analytics": "e805973f-b626-43d7-9824-4b718589f8a1"
   }
 }
