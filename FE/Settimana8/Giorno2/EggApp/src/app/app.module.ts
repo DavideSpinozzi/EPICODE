@@ -5,9 +5,11 @@ import { AppComponent } from './app.component';
 import { AttivoComponent } from './attivo/attivo.component';
 import { InattivoComponent } from './inattivo/inattivo.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { PostCardComponent } from './post-card/post-card.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent},
+  { path: '', component: HomeComponent},
   { path: 'Attivo', component: AttivoComponent },
   { path: 'Inattivo', component: InattivoComponent }
 ];
@@ -17,6 +19,8 @@ const routes: Routes = [
     AttivoComponent,
     InattivoComponent,
     NavbarComponent,
+    HomeComponent,
+    PostCardComponent,
   ],
   imports: [
     BrowserModule,

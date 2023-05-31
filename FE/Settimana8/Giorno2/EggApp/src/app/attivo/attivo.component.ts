@@ -10,14 +10,18 @@ export class AttivoComponent implements OnInit {
 
   posts!: Interfaccia[];
 
-    constructor(private postsSrv: ServiceService) {
-        this.postsSrv.getPosts().then((data) => {
-            this.posts = data;
-            console.log(this.posts);
-        });
-    }
+  constructor(private postsSrv: ServiceService) {}
 
   ngOnInit(): void {
+      this.recuperaDati();
   }
 
+  async recuperaDati() {
+      this.posts = await this.postsSrv.getPosts();
+  }
+
+  onInactivePost(id: number, index: number) {
+      this.postsSrv.updatePost({ active: false }, id);
+      this.posts.splice(index, 1);
+  }
 }

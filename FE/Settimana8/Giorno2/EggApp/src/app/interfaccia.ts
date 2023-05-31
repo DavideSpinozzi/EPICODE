@@ -3,4 +3,5 @@ export interface Interfaccia {
   body: string;
   title: string;
   active: boolean;
+  type: string
 }
