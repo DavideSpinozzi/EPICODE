@@ -111,7 +111,9 @@ export class TodoComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadTasks();
-    this.togliMessaggioDelay();
+    this.todoService.togliMessaggioDelay().then(() => {
+      this.showMessage = false;
+    });
   }
 
   TaskIncomplete(): boolean {
@@ -145,11 +147,7 @@ export class TodoComponent implements OnInit{
     task.completed = !task.completed;
   }
 
-  togliMessaggioDelay(): void {
-    setTimeout(() => {
-      this.showMessage = false;
-    }, 2000);
-  }
+
 
 
 

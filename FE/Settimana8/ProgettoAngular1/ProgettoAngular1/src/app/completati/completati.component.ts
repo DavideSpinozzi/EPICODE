@@ -59,7 +59,9 @@ export class CompletatiComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadTasks();
-    this.togliMessaggioDelay();
+    this.todoService.togliMessaggioDelay().then(() => {
+      this.showMessage = false;
+    });
   }
 
   TaskComplete(): boolean {
@@ -75,9 +77,4 @@ export class CompletatiComponent implements OnInit {
     this.todoService.deleteTask(task);
   }
 
-  togliMessaggioDelay(): void {
-    setTimeout(() => {
-      this.showMessage = false;
-    }, 2000);
-  }
 }
