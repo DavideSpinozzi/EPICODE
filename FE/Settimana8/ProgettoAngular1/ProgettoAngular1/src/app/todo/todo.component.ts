@@ -85,8 +85,6 @@ export class TodoComponent implements OnInit{
 
   todos: Todo[] = [];
   nuovaTask: string = '';
-  //editingTask: Todo | null = null;
-  //editedTaskTitle: string = '';
   showMessage: boolean = true;
 
 
@@ -131,27 +129,4 @@ export class TodoComponent implements OnInit{
     task.completed = !task.completed;
   }
 
-
-
-
-
-
-
- /* ModificaTask(task: Todo): void {
-    this.editingTask = task;
-    this.editedTaskTitle = task.title;
-  }
-
-  CancellaEditingTask(): void {
-    this.editingTask = null;
-    this.editedTaskTitle = '';
-  }
-
-  UpdateTaskTitle(): void {
-    if (this.editingTask && this.editedTaskTitle.trim()) {
-      this.editingTask.title = this.editedTaskTitle;
-      this.editingTask = null;
-      this.editedTaskTitle = '';
-    }
-  }*/
 }
