@@ -40,13 +40,30 @@ import { Component, OnInit } from '@angular/core';
                                 >Movies</a
                             >
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item dropdown">
                             <a
-                                class="nav-link text-white"
+                                class="nav-link dropdown-toggle text-white"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
                                 [routerLink]="['/profile']"
                                 routerLinkActive="active"
-                                >Profile</a
                             >
+                                Profile
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" [routerLink]="['/profile/details']"
+                                routerLinkActive="active">Details</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" [routerLink]="['/profile/favorites']"
+                                routerLinkActive="active"
+                                        >Favorites</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>

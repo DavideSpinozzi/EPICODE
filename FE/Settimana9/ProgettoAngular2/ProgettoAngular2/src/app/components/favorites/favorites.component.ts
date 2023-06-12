@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'app-favorites',
   template: `
     <p>
-      profile works!
+      favorites works!
     </p>
-    <router-outlet></router-outlet>
   `,
   styles: [
   ]
 })
-export class ProfileComponent implements OnInit {
+export class FavoritesComponent implements OnInit {
 
   constructor() { }
 
