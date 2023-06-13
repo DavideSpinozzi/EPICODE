@@ -29,6 +29,12 @@
       "password": "$2a$10$dUc3jYtuRxxmnln0QZn.ZeJPDfdXmW/QCPKLmVJ31FiOXe1wZoir2",
       "name": "Gabriel",
       "id": 5
+    },
+    {
+      "email": "pugizingaro@gmail.com",
+      "name": "Davide",
+      "password": "123",
+      "id": 7
     }
   ],
   "favorites": [
