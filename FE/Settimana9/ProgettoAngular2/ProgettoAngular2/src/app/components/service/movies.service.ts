@@ -12,4 +12,8 @@ baseURL = environment.baseURL;
   recuperaMovies(){
     return this.http.get<MoviePopular[]>(`${this.baseURL}/movies-popular`);
   }
+
+  dettaglioMovies(id: number) {
+    return this.http.get<MoviePopular>(`${this.baseURL}movies/${id}`);
+}
 }

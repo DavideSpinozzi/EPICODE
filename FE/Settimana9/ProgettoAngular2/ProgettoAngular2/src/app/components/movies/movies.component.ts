@@ -21,10 +21,11 @@ import { MoviePopular } from 'src/app/models/movie-popular';
                         <h3 class="card-text">
                             {{ movie.title }}
                         </h3>
+                        <div class="d-flex justify-content-between align-items-center">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
+                            width="20"
+                            height="20"
                             fill="currentColor"
                             class="bi bi-heart-fill"
                             viewBox="0 0 16 16"
@@ -34,6 +35,15 @@ import { MoviePopular } from 'src/app/models/movie-popular';
                                 d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"
                             />
                         </svg>
+                        <button
+                        class="btn btn-outline-light"
+                        type="submit"
+                        [routerLink]="[movie.id]"
+                    >
+                        Dettagli
+                    </button>
+
+                    </div>
                     </div>
                 </div>
             </div>

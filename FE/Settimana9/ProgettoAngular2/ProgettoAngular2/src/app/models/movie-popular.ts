@@ -1,5 +1,5 @@
 export interface MoviePopular {
-    id?:number,
+    id :number,
     poster_path: string,
     title:string
 }

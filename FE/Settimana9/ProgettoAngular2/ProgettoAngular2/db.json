@@ -32,9 +32,21 @@
     },
     {
       "email": "pugizingaro@gmail.com",
+      "password": "$2a$10$ukk322UuCXK6j2XlBgFrXe6NyVfJRGDnOw8.Vg8gLznLaUR/.eFrq",
       "name": "Davide",
-      "password": "123",
+      "id": 6
+    },
+    {
+      "email": "ca@gmail.com",
+      "password": "$2a$10$f880T7Gz3FhKIvHz2en8UevsGZ/A4hJcHb0RBL3eAOvaDGstp9MKS",
+      "name": "Davide",
       "id": 7
+    },
+    {
+      "email": "peppe@gmail.com",
+      "password": "$2a$10$Yuhq5LXM6h5XohShljYTyOdQPaOO3BEJW5mtJ6T8LRY21lmL6sbHW",
+      "name": "Peppe",
+      "id": 8
     }
   ],
   "favorites": [

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthData } from 'src/app/auth/auth-data.interface';
+import { AuthService } from 'src/app/auth/auth.service';
 @Component({
     selector: 'app-navbar',
     template: `
@@ -49,14 +50,11 @@ import { Component, OnInit } from '@angular/core';
                                 aria-expanded="false"
                                 [routerLink]="['/profile']"
                                 routerLinkActive="active"
+                                *ngIf="user"
                             >
                                 Profile
                             </a>
                             <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" [routerLink]="['/profile/details']"
-                                routerLinkActive="active">Details</a>
-                                </li>
                                 <li>
                                     <a class="dropdown-item" [routerLink]="['/profile/favorites']"
                                 routerLinkActive="active"
@@ -67,7 +65,7 @@ import { Component, OnInit } from '@angular/core';
                         </li>
                     </ul>
                 </div>
-                <div class="d-flex">
+                <div *ngIf="!user" class="d-flex">
                     <button
                         class="btn btn-outline-light me-2"
                         type="submit"
@@ -83,6 +81,16 @@ import { Component, OnInit } from '@angular/core';
                         Register
                     </button>
                 </div>
+                <div *ngIf="user" class="d-flex align-items-center">
+
+                <h4 class="text-white m-0 me-2">Ciao {{user.users.name}}</h4>
+                <button
+                        class="btn btn-outline-danger"
+                        type="submit"
+                        (click)="logout()"
+                    >
+                        Logout
+                    </button></div>
             </div>
         </nav>
     `,
@@ -96,7 +104,18 @@ import { Component, OnInit } from '@angular/core';
     ],
 })
 export class NavbarComponent implements OnInit {
-    constructor() {}
 
-    ngOnInit(): void {}
+user! : AuthData | null;
+
+    constructor(private authSrv: AuthService) {}
+
+    ngOnInit(): void {
+        this.authSrv.user$.subscribe((_user)=>{
+            this.user= _user
+        })
+    }
+
+    logout(){
+        this.authSrv.logout();
+    }
 }

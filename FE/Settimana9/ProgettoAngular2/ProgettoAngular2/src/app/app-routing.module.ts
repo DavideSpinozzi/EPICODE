@@ -7,29 +7,31 @@ import { RegisterComponent } from './auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
     },
     {
         path: 'movies',
         component: MoviesComponent,
     },
     {
+        path: 'movies/:id',
+        component: DetailsComponent,
+    },
+    {
         path: 'profile',
         component: ProfileComponent,
         children: [
             {
-                path: 'details',
-                component: DetailsComponent
-            },
-            {
                 path: 'favorites',
-                component: FavoritesComponent
-            }
-        ]
+                component: FavoritesComponent,
+            },
+        ],
+        canActivate: [AuthGuard],
     },
     {
         path: 'login',
@@ -38,7 +40,7 @@ const routes: Routes = [
     {
         path: 'register',
         component: RegisterComponent,
-    }
+    },
 ];
 
 @NgModule({
