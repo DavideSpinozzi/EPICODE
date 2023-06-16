@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-register',
   template: `
     <div class="main d-flex align-items-center justify-content-center text-white">
-      <div class="bg-dark p-4 rounded-2 w-25">
+      <div class="bg-dark p-4 rounded-2 w-25 border border-secondary">
         <h1 class="text-center mb-4">Register</h1>
 
         <form #modulo="ngForm" (ngSubmit)="PostUtenti(modulo)" class="needs-validation my-3">

@@ -83,7 +83,7 @@ import { AuthService } from 'src/app/auth/auth.service';
                 </div>
                 <div *ngIf="user" class="d-flex align-items-center">
 
-                <h4 class="text-white m-0 me-2">Ciao {{user.users.name}}</h4>
+                <h4 class="text-white m-0 me-2">{{user.user.name}}</h4>
                 <button
                         class="btn btn-outline-danger"
                         type="submit"

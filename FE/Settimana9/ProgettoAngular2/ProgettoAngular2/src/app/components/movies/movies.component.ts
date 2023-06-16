@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../service/movies.service';
 import { MoviePopular } from 'src/app/models/movie-popular';
+import { AuthData } from 'src/app/auth/auth-data.interface';
+import { AuthService } from 'src/app/auth/auth.service';
+import { Favourite } from 'src/app/models/favourite.interface';
+
 @Component({
     selector: 'app-movies',
     template: `
-        <div class="bg-black">
+        <div class="bg-black main">
             <h1 class="text-center text-white titolo p-3">MOVIES</h1>
             <div class="row w-100 m-auto">
                 <div class="col-3 p-4 contenitoreCards" *ngFor="let movie of movies">
@@ -29,6 +33,7 @@ import { MoviePopular } from 'src/app/models/movie-popular';
                             fill="currentColor"
                             class="bi bi-heart-fill"
                             viewBox="0 0 16 16"
+                            (click)="isFavorito(movie) ? eliminaFavorito(movie) : aggiungiFavorito(movie.id)" [ngClass]="{'text-danger': isFavorito(movie), 'text-white': !isFavorito(movie)}"
                         >
                             <path
                                 fill-rule="evenodd"
@@ -51,7 +56,9 @@ import { MoviePopular } from 'src/app/models/movie-popular';
     </div>
     `,
     styles: [
-        `
+        `.main{
+            min-height: 100vh
+        }
         .contenitoreCards{
             height: 800px;
         }
@@ -63,12 +70,61 @@ import { MoviePopular } from 'src/app/models/movie-popular';
 })
 export class MoviesComponent implements OnInit {
     movies!: MoviePopular[];
+    utente!: AuthData | null;
+    favoriti!: Favourite[];
 
-    constructor(private movieSrv: MoviesService) {}
+    constructor(private movieSrv: MoviesService, private authSrv: AuthService) {}
 
     ngOnInit(): void {
-        this.movieSrv.recuperaMovies().subscribe((_movies: MoviePopular[]) => {
-            this.movies = _movies;
+        this.authSrv.user$.subscribe((_utente) => {
+            this.utente = _utente;
         });
+        setTimeout(() => {
+            this.recuperaFavoriti(this.utente!.user.id);
+            this.recuperaFilm();
+        }, 1500);
+    }
+
+    recuperaFilm(): void {
+        this.movieSrv.recuperaMovies().subscribe((films: MoviePopular[]) => {
+            this.movies = films;
+        });
+    }
+
+    recuperaFavoriti(userId: number): void {
+        this.movieSrv
+            .recuperaFavoriti(userId)
+            .subscribe((likes: Favourite[]) => {
+                this.favoriti = likes;
+            });
+    }
+
+    aggiungiFavorito(idFilm: number): void {
+        const favorito: Favourite = {
+            userId: this.utente!.user.id,
+            movieId: idFilm,
+        };
+
+        this.movieSrv.aggiungiFavorito(favorito).subscribe(() => {
+            this.recuperaFavoriti(this.utente!.user.id);
+        });
+    }
+
+    eliminaFavorito(film: MoviePopular): void {
+        const idFav = this.getIdFavorito(film);
+        if (idFav) {
+            this.movieSrv.rimuoviFavorito(idFav).subscribe(() => {
+                this.recuperaFavoriti(this.utente!.user.id);
+            });
+        }
+    }
+
+    isFavorito(film: MoviePopular): boolean {
+        return this.favoriti.some((f) => f.movieId === film.id);
+    }
+
+    getIdFavorito(film: MoviePopular): number | undefined {
+        const favorito = this.favoriti.find((f) => f.movieId === film.id);
+        return favorito?.id;
     }
 }

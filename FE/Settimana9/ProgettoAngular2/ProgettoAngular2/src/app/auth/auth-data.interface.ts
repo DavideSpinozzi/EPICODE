@@ -1,6 +1,6 @@
 export interface AuthData {
     accessToken : string,
-    users:{
+    user:{
         email: string,
           name: string,
           id: number

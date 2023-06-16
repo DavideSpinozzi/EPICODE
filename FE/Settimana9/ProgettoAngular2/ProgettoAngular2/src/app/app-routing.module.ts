@@ -17,10 +17,12 @@ const routes: Routes = [
     {
         path: 'movies',
         component: MoviesComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'movies/:id',
         component: DetailsComponent,
+        canActivate: [AuthGuard]
     },
     {
         path: 'profile',

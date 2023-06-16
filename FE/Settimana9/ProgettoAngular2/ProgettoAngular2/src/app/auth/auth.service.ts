@@ -73,6 +73,6 @@ export class AuthService {
           name: string,
           password: string
     }){
-      return this.http.post(`${this.baseURL}/register` , data);
+      return this.http.post(`${this.baseURL}/users` , data);
     }
   }

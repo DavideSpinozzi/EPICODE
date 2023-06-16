@@ -7,7 +7,7 @@ import { NgForm } from '@angular/forms';
   selector: 'app-login',
   template: `
     <div class="main d-flex align-items-center justify-content-center text-white">
-      <div class="bg-dark p-4 rounded-2 w-25">
+      <div class="bg-dark p-4 rounded-2 w-25 border border-secondary">
         <h1 class="text-center mb-4">Login</h1>
 
         <form #form="ngForm" (ngSubmit)="accedi(form)" class="needs-validation my-3">
